@@ -27,6 +27,7 @@ class ApiClient: ApiService {
                         return
                     }
                     guard let arrayJSON = json["data"] as? Array<[String: AnyObject]> else {
+                        observable.onNext([])
                         observable.onCompleted()
                         return
                     }
